@@ -47,7 +47,7 @@ export UNMARKAI_API_KEY='uma_live_replace_with_your_key'
 python examples/remove_text.py --file ./source.mp4
 ```
 
-The command uploads your video, creates a job, polls it and saves outputs under `output/`. The key is read from the environment; `.env.example` is a template, not automatically loaded. Keep API keys on your server.
+The command uploads your video, creates a job, polls it and saves outputs under `output/`. Requests go to `https://api.unmarkai.net/v1` by default; set `UNMARKAI_API_BASE` to override it. A separate mainland China endpoint (`https://unmarkai.cn/api/v1`, separate keys and CNY wallet) is documented in [README.zh-CN.md](README.zh-CN.md). The key is read from the environment; `.env.example` is a template, not automatically loaded. Keep API keys on your server.
 
 **Direct HTTPS import** (a downloadable video URL, not a YouTube/TikTok watch page):
 
