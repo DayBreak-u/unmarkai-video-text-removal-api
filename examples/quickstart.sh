@@ -4,7 +4,8 @@ set -euo pipefail
 : "${UNMARKAI_API_KEY:?Export UNMARKAI_API_KEY first}"
 command -v jq >/dev/null
 VIDEO=${1:?Usage: bash examples/quickstart.sh ./source.mp4}
-API_BASE=https://api.unmarkai.net/v1
+API_BASE=${UNMARKAI_API_BASE:-https://api.unmarkai.net/v1}
+API_BASE=${API_BASE%/}
 mkdir -p output/curl
 SIZE=$(wc -c < "$VIDEO" | tr -d ' ')
 CONTENT_TYPE=${CONTENT_TYPE:-video/mp4}

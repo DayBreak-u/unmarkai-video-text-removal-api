@@ -31,7 +31,7 @@ Canonical contract: [https://unmarkai.net/openapi-v1.yaml](https://unmarkai.net/
 
 ## Error handling
 
-The example retries GET and idempotent job creation on transient connection errors and 429/502/503/504, with bounded backoff. It never blindly retries a signed PUT, review PATCH or an unkeyed upload POST. On an uncertain upload result, inspect the upload before creating a replacement. Review conflicts require a fresh fetch, not an unconditional overwrite. API responses have `error.code`, `error.message`, `error.request_id`; example errors show code and request ID without dumping signed URLs.
+The example retries GET and idempotent job creation on transient connection errors and 429/502/503/504, with bounded backoff. It never blindly retries a signed PUT or an unkeyed upload POST. On an uncertain upload result, inspect the upload before creating a replacement. API responses have `error.code`, `error.message`, `error.request_id`; example errors show code and request ID without dumping signed URLs.
 
 ## cURL options
 
